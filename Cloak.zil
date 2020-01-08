@@ -1,8 +1,8 @@
 "Cloak of Darkness - Main"
 
 <CONSTANT GAME-BANNER
-"Template|
-A ZILF game rewrite by Alex Proudfoot">
+"Cloak of Darkness|
+A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 
 <CONSTANT RELEASEID 1> <VERSION ZIP>
 
