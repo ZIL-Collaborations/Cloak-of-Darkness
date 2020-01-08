@@ -1,8 +1,8 @@
-"Template - Main"
+"Cloak of Darkness - Main"
 
 <CONSTANT GAME-BANNER
 "Template|
-A ZILF game template by Alex Proudfoot">
+A ZILF game rewrite by Alex Proudfoot">
 
 <CONSTANT RELEASEID 1> <VERSION ZIP>
 
