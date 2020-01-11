@@ -21,6 +21,23 @@ though now only one remains. The exit is a door to the east.")
     (FLAGS LIGHTBIT)
 >
 
+<OBJECT HOOK (DESC "small brass hook") (IN CLOAKROOM)
+    (ADJECTIVE SMALL BRASS) (SYNONYM HOOK PEG)
+    (ACTION HOOK-EXAMINE-F)
+    (FLAGS CONTBIT SURFACEBIT OPENBIT NDESCBIT)
+>
+
+<ROUTINE HOOK-EXAMINE-F ()
+    <COND (<VERB? EXAMINE>
+        <TELL "It's just a small brass hook, ">
+        <COND (<IN? CLOAK HOOK>
+            <TELL "with a cloak hanging on it.">)
+        (ELSE
+            <TELL "screwed to the wall.">
+        )>
+        <CRLF>)>
+>
+
 
 "Location - Foyer bar"
 
