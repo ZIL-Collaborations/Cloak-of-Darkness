@@ -25,4 +25,5 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
     <SETG HERE FOYER>
 >
 
+<INSERT-FILE "Characters">
 <INSERT-FILE "Locations">
