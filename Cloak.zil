@@ -30,3 +30,4 @@ people about but, hey, what do you expect in a cheap demo game...?" CR>
 
 <INSERT-FILE "Characters">
 <INSERT-FILE "Locations">
+<INSERT-FILE "Scenes">

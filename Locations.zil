@@ -8,6 +8,8 @@ and gold, with glittering chandeliers overhead. The entrance from
 the street is to the north, and there are doorways south and west.")
     (SOUTH TO BAR)
     (WEST TO CLOAKROOM)
+    (NORTH SORRY "You've only just arrived, and besides, the weather outside
+seems to be getting worse.")
     (FLAGS LIGHTBIT)
 >
 
@@ -33,8 +35,7 @@ though now only one remains. The exit is a door to the east.")
         <COND (<IN? CLOAK HOOK>
             <TELL "with a cloak hanging on it.">)
         (ELSE
-            <TELL "screwed to the wall.">
-        )>
+            <TELL "screwed to the wall.">)>
         <CRLF>)>
 >
 
@@ -46,4 +47,12 @@ though now only one remains. The exit is a door to the east.")
 of the foyer to the north, is completely empty. There seems to
 be some sort of message scrawled in the sawdust on the floor.")
     (NORTH TO FOYER)
+    (ACTION BAR-F)
+>
+
+<OBJECT MESSAGE (DESC "scrawled message") (IN BAR)
+    (SYNONYM MESSAGE SAWDUST FLOOR)
+    (NUMBER 0)
+    (ACTION MESSAGE-F)
+    (FLAGS NDESCBIT)
 >

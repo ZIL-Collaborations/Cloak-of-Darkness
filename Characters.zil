@@ -7,5 +7,6 @@
     (TEXT "A handsome cloak, of velvet trimmed with satin, and slightly
 spattered with raindrops. Its blackness is so deep that it
 almost seems to suck light from the room.")
-    (FLAGS WEARBIT WORNBIT)
+    (ACTION CLOAK-F)
+    (FLAGS WEARBIT WORNBIT GENERAL)
 >
