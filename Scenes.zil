@@ -22,9 +22,7 @@
         (ELSE
             <TELL "This isn't the best place to leave a smart cloak
 lying around." CR>
-            <RTRUE>)>)
-    (ELSE
-        <RFALSE>)>
+            <RTRUE>)>)>
 >
 
 
