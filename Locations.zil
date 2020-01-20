@@ -52,7 +52,7 @@ be some sort of message scrawled in the sawdust on the floor.")
 
 <OBJECT MESSAGE (DESC "scrawled message") (IN BAR)
     (SYNONYM MESSAGE SAWDUST FLOOR)
-    (NUMBER 0)
+    (LOSING-POINTS 0)
     (ACTION MESSAGE-F)
     (FLAGS NDESCBIT)
 >

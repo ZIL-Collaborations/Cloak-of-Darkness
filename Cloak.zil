@@ -10,7 +10,8 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 "The Mechanics"
 
 <ROUTINE GO ()
-    <INIT> <MOVE PLAYER ,HERE>
+    <SET-THE-SCENE>
+    <INTRODUCE-THE-GAME>
     <CRLF> <V-VERSION>
     <CRLF> <V-LOOK>
     <MAIN-LOOP>
@@ -18,12 +19,20 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 
 <INSERT-FILE "parser">
 
+<INSERT-FILE "Actions">
+<INSERT-FILE "Activities">
+
 
 "The Game"
 
-<ROUTINE INIT ()
+<ROUTINE SET-THE-SCENE ()
     <SETG HERE FOYER>
-    <TELL CR "Hurrying through the rainswept November night, you're glad to see the
+    <MOVE PLAYER ,HERE>
+    <SETG MAX-SCORE 2>
+>
+
+<ROUTINE INTRODUCE-THE-GAME ()
+    <TELL CR CR "Hurrying through the rainswept November night, you're glad to see the
 bright lights of the Opera House. It's surprising that there aren't more
 people about but, hey, what do you expect in a cheap demo game...?" CR>
 >

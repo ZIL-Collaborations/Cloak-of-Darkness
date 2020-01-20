@@ -1,5 +1,8 @@
 "Cloak of Darkness - Characters"
 
+<SETG EXTRA-FLAGS '(UNHUNG)>
+
+
 "Character - The player"
 
 <OBJECT CLOAK (DESC "velvet cloak") (IN PLAYER)
@@ -8,5 +11,5 @@
 spattered with raindrops. Its blackness is so deep that it
 almost seems to suck light from the room.")
     (ACTION CLOAK-F)
-    (FLAGS WEARBIT WORNBIT GENERAL)
+    (FLAGS WEARBIT WORNBIT UNHUNG)
 >
