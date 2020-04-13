@@ -1,4 +1,6 @@
-"Cloak of Darkness - Main"
+"C L O A K   O F   D A R K N E S S  -  Main File"
+
+"THE PROJECT"
 
 <CONSTANT GAME-BANNER
 "Cloak of Darkness|
@@ -7,23 +9,45 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 <CONSTANT RELEASEID 1> <VERSION ZIP>
 
 
-"The Mechanics"
+"THE MECHANICS"
+
+"Startup"
 
 <ROUTINE GO ()
     <SET-THE-SCENE>
     <INTRODUCE-THE-GAME>
-    <CRLF> <V-VERSION>
-    <CRLF> <V-LOOK>
     <MAIN-LOOP>
 >
 
+"Library and Extensions"
+
 <INSERT-FILE "parser">
+<INSERT-FILE "../Extensions/Scoring">
+<INSERT-FILE "../Extensions/Finishing">
 
-<INSERT-FILE "Actions">
-<INSERT-FILE "Activities">
+"Game Specific Interaction - NONE"
+
+"Game Specific Behaviour - NONE"
+
+"Extra Game Verbs"
+
+<SETG EXTRA-GAME-VERBS '(NOTIFY-OFF NOTIFY-ON SCORE)>
+
+"Library Hooks"
+
+<BIND ((REDEFINE T))
+    <DEFMAC HOOK-END-OF-COMMAND ()
+       '<BIND ()
+            <NOTIFY-IF-SCORE-UPDATED> ;"Scoring"
+            <FINISH-IF-CODE-SET>      ;"Finishing"
+        >
+    >
+>
 
 
-"The Game"
+"THE GAME"
+
+"Setting the Scene"
 
 <ROUTINE SET-THE-SCENE ()
     <SETG HERE FOYER>
@@ -31,12 +55,24 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
     <SETG MAX-SCORE 2>
 >
 
+"Introduction"
+
 <ROUTINE INTRODUCE-THE-GAME ()
     <TELL CR CR "Hurrying through the rainswept November night, you're glad to see the
 bright lights of the Opera House. It's surprising that there aren't more
 people about but, hey, what do you expect in a cheap demo game...?" CR>
+    <CRLF> <V-VERSION>
+    <CRLF> <V-LOOK>
 >
 
+"Cast"
+
 <INSERT-FILE "Characters">
+
+"Setting"
+
 <INSERT-FILE "Locations">
+
+"Plot"
+
 <INSERT-FILE "Scenes">

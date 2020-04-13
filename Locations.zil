@@ -1,6 +1,6 @@
-"Cloak of Darkness - Locations"
+"C L O A K   O F   D A R K N E S S  -  Locations File"
 
-"Location - Foyer of the Opera House"
+"FOYER OF THE OPERA HOUSE"
 
 <ROOM FOYER (DESC "Foyer of the Opera House") (IN ROOMS)
     (LDESC "You are standing in a spacious hall, splendidly decorated in red
@@ -14,7 +14,7 @@ seems to be getting worse.")
 >
 
 
-"Location - Cloakroom"
+"CLOAKROOM"
 
 <ROOM CLOAKROOM (DESC "Cloakroom") (IN ROOMS)
     (LDESC "The walls of this small room were clearly once lined with hooks,
@@ -40,7 +40,7 @@ though now only one remains. The exit is a door to the east.")
 >
 
 
-"Location - Foyer bar"
+"FOYER BAR"
 
 <ROOM BAR (DESC "Foyer bar") (IN ROOMS)
     (LDESC "The bar, much rougher than you'd have guessed after the opulence
@@ -52,7 +52,6 @@ be some sort of message scrawled in the sawdust on the floor.")
 
 <OBJECT MESSAGE (DESC "scrawled message") (IN BAR)
     (SYNONYM MESSAGE SAWDUST FLOOR)
-    (LOSING-POINTS 0)
     (ACTION MESSAGE-F)
     (FLAGS NDESCBIT)
 >
