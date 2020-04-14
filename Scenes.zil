@@ -5,7 +5,8 @@
 "Goal"
 
 "The goal is to read the message in the foyer bar with the maximum score of two
- points and fewer than two strikes. With two or more strikes, the game is lost."
+ points and fewer than two strikes. With two or more strikes, the game is lost.
+ Any action on the message results in reading the message."
 
 "One point is awarded for reading the message with fewer than two strikes."
 
@@ -23,11 +24,11 @@ difficult to read. You can just distinguish the words..." CR CR>
 
 "Puzzle"
 
-"The foyer bar can only be lit by taking off the cloak which is worn by the
- player character. This can only be done in the cloakroom."
+"The foyer bar is only lighted when the player character is no longer wearing or
+ carrying the cloak."
 
 "One point is awarded for hanging the cloak on the hook instead of just
- dropping it."
+ dropping it in the cloakroom."
 
 <GLOBAL CLOAK-HUNG <>>
 
