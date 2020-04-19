@@ -6,7 +6,6 @@
  which count towards losing. Two strikes are given for going in any direction
  other than north and one strike is given for doing anything other than going."
 
-
 <GLOBAL STRIKES 0>
 
 <ROUTINE BAR-F (RARG)
