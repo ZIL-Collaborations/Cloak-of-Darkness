@@ -31,15 +31,18 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 
 "Extra Game Verbs"
 
-<SETG EXTRA-GAME-VERBS '(NOTIFY-OFF NOTIFY-ON SCORE)>
+<SETG EXTRA-GAME-VERBS
+   '(NOTIFY-OFF NOTIFY-ON SCORE ;"from Scoring"
+    )
+>
 
 "Library Hooks"
 
 <BIND ((REDEFINE T))
     <DEFMAC HOOK-END-OF-COMMAND ()
        '<BIND ()
-            <NOTIFY-IF-SCORE-UPDATED> ;"Scoring"
-            <FINISH-IF-CODE-SET>      ;"Finishing"
+            <NOTIFY-IF-SCORE-UPDATED> ;"from Scoring"
+            <FINISH-IF-CODE-SET>      ;"from Finishing"
         >
     >
 >

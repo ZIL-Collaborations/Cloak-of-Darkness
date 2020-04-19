@@ -1,56 +1,11 @@
 "C L O A K   O F   D A R K N E S S  -  Scenes File"
 
-"WINNING THE GAME"
+"BLUNDERING AROUND IN THE DARK"
 
-"Goal"
+"While the player is in darkness, in the foyer bar, this game gives strikes
+ which count towards losing. Two strikes are given for going in any direction
+ other than north and one strike is given for doing anything other than going."
 
-"The goal is to read the message in the foyer bar with the maximum score of two
- points and fewer than two strikes. With two or more strikes, the game is lost.
- Any action on the message results in reading the message."
-
-"One point is awarded for reading the message with fewer than two strikes."
-
-<ROUTINE MESSAGE-F ()
-    <COND (<L? ,STRIKES 2>
-        <SETG SCORE <+ ,SCORE 1>>
-        <TELL "The message, neatly marked in the sawdust, reads..." CR CR>
-        <SETG FINISH-CODE 1>)
-    (ELSE
-        <TELL "The message has been carelessly trampled, making it
-difficult to read. You can just distinguish the words..." CR CR>
-        <SETG FINISH-CODE 2>)>
-    <RTRUE>
->
-
-"Puzzle"
-
-"The foyer bar is only lighted when the player character is no longer wearing or
- carrying the cloak."
-
-"One point is awarded for hanging the cloak on the hook instead of just
- dropping it in the cloakroom."
-
-<GLOBAL CLOAK-HUNG <>>
-
-<ROUTINE CLOAK-F ()
-    <COND (<OR <VERB? DROP> <VERB? PUT-ON>>
-        <COND (<=? ,HERE CLOAKROOM>
-            <FSET BAR ,LIGHTBIT>
-            <COND (<AND <VERB? PUT-ON> <NOT ,CLOAK-HUNG>>
-                <SETG CLOAK-HUNG T>
-                <SETG SCORE <+ ,SCORE 1>>)>
-            <RFALSE>)
-        (ELSE
-            <TELL "This isn't the best place to leave a smart cloak
-lying around." CR>
-            <RTRUE>)>)>
->
-
-"Strikes are awarded for ...
- 1. moving in any direction other than north in the foyer bar while in darkness
-    (2 strikes)
- 2. doing anything other than moving in the foyer bar while in darkness
-    (1 strike)"
 
 <GLOBAL STRIKES 0>
 
@@ -68,4 +23,59 @@ lying around." CR>
                 <TELL "In the dark? You could easily disturb something!" CR>
                 <RTRUE>)>
             <RFALSE>)>)>
+>
+
+
+"BRINGING LIGHT TO THE DARKNESS"
+
+"The foyer bar is only lighted when the player is neither wearing nor carrying
+ the velvet cloak."
+
+"Putting the velvet cloak on the small brass hook lights the foyer bar. One
+ point is awarded for doing it the first time."
+
+"Dropping the velvet cloak in the cloakroom lights the foyer bar. Dropping it
+ elsewhere is not allowed."
+
+"Picking up the velvet cloak makes the foyer bar dark again."
+
+<GLOBAL CLOAK-HUNG <>>
+
+<ROUTINE CLOAK-F ()
+    <COND (<VERB? PUT-ON>
+        <COND (<NOT ,CLOAK-HUNG>
+            <SETG CLOAK-HUNG T>
+            <SETG SCORE <+ ,SCORE 1>>)>
+        <FSET BAR ,LIGHTBIT>)
+    (<VERB? DROP>
+        <COND (<=? ,HERE CLOAKROOM>
+            <FSET BAR ,LIGHTBIT>)
+        (ELSE
+            <TELL "This isn't the best place to leave a smart cloak lying
+around." CR>)>)
+    (<VERB? TAKE>
+        <FCLEAR BAR ,LIGHTBIT>)>
+>
+
+
+"READING THE SCRAWLED MESSAGE"
+
+"The goal is to read the scrawled message in the foyer bar with the maximum
+ score of two points and fewer than two strikes. Any action on the message
+ results in reading the message."
+
+"One point is awarded and the game is won for reading the message with fewer
+ than two strikes. The game is lost for reading the message with two strikes or
+ more."
+
+<ROUTINE MESSAGE-F ()
+    <COND (<L? ,STRIKES 2>
+        <SETG SCORE <+ ,SCORE 1>>
+        <TELL "The message, neatly marked in the sawdust, reads..." CR CR>
+        <SETG FINISH-CODE 1>)
+    (ELSE
+        <TELL "The message has been carelessly trampled, making it difficult to
+read. You can just distinguish the words..." CR CR>
+        <SETG FINISH-CODE 2>)>
+    <RTRUE>
 >
