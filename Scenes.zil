@@ -45,15 +45,19 @@
         <COND (<NOT ,CLOAK-HUNG>
             <SETG CLOAK-HUNG T>
             <SETG SCORE <+ ,SCORE 1>>)>
-        <FSET BAR ,LIGHTBIT>)
+        <FSET BAR ,LIGHTBIT>
+        <RFALSE>)
     (<VERB? DROP>
         <COND (<=? ,HERE CLOAKROOM>
-            <FSET BAR ,LIGHTBIT>)
+            <FSET BAR ,LIGHTBIT>
+            <RFALSE>)
         (ELSE
             <TELL "This isn't the best place to leave a smart cloak lying
-around." CR>)>)
+around." CR>
+            <RTRUE>)>)
     (<VERB? TAKE>
-        <FCLEAR BAR ,LIGHTBIT>)>
+        <FCLEAR BAR ,LIGHTBIT>
+        <RFALSE>)>
 >
 
 

@@ -11,5 +11,5 @@
 spattered with raindrops. Its blackness is so deep that it
 almost seems to suck light from the room.")
     (ACTION CLOAK-F)
-    (FLAGS WEARBIT WORNBIT)
+    (FLAGS WEARBIT WORNBIT TAKEBIT)
 >
