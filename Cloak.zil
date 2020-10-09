@@ -25,9 +25,7 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 <INSERT-FILE "../Extensions/Scoring">
 <INSERT-FILE "../Extensions/Finishing">
 
-"Game Specific Interaction - NONE"
-
-"Game Specific Behaviour - NONE"
+"Game Specific Interaction and Behaviour - NONE"
 
 "Extra Game Verbs"
 
@@ -68,14 +66,8 @@ people about but, hey, what do you expect in a cheap demo game...?" CR>
     <CRLF> <V-LOOK>
 >
 
-"Cast"
+"Cast, Setting and Plot"
 
 <INSERT-FILE "Characters">
-
-"Setting"
-
 <INSERT-FILE "Locations">
-
-"Plot"
-
 <INSERT-FILE "Scenes">
