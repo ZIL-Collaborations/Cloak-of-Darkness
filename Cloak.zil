@@ -27,13 +27,6 @@ A rewrite of the Roger Firth IF demonstration by Alex Proudfoot">
 
 "Game Specific Interaction and Behaviour - NONE"
 
-"Extra Game Verbs"
-
-<SETG EXTRA-GAME-VERBS
-   '(NOTIFY-OFF NOTIFY-ON SCORE ;"from Scoring"
-    )
->
-
 "Library Hooks"
 
 <BIND ((REDEFINE T))
